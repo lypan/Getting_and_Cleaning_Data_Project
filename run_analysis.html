@@ -81,7 +81,9 @@ img {
   # read activity file
   activity_list &lt;- read.table(file.path(dir_name, &quot;activity_labels.txt&quot;), col.names = c(&quot;id&quot;, &quot;activity&quot;))
   # head(activity_list)</code></pre>
-<p>2.Read train and test dataset then filter by mean and std index. After, map activity number to label.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Read train and test dataset then filter by mean and std index. After, map activity number to label.</li>
+</ol>
 <pre class="r"><code>  # read data set and filter by index
   train.x &lt;- read.table(file.path(dir_name, &quot;train&quot;, &quot;X_train.txt&quot;), col.names = feature_list[, &quot;feature&quot;])[, mean_std_idx]
   # head(train.x)
@@ -105,7 +107,9 @@ img {
   # read data subject
   test.s &lt;- read.table(file.path(dir_name, &quot;test&quot;, &quot;subject_test.txt&quot;), col.names = &quot;subject&quot;)
   # head(test.s)</code></pre>
-<p>3.Merge data then melt and dcast by group and calculate mean. After, write to the file.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Merge data then melt and dcast by group and calculate mean. After, write to the file.</li>
+</ol>
 <pre class="r"><code>  merge_data &lt;- cbind(rbind(train.x, test.x), rbind(train.y, test.y), rbind(train.s, test.s))
   # str(merge_data)
   melt_data &lt;- melt(merge_data, id.vars = c(c(&quot;activity&quot;, &quot;subject&quot;)))

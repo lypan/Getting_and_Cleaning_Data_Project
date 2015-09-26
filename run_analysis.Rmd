@@ -22,7 +22,7 @@ output: html_document
   activity_list <- read.table(file.path(dir_name, "activity_labels.txt"), col.names = c("id", "activity"))
   # head(activity_list)
 ```
-2.Read train and test dataset then filter by mean and std index. After, map activity number to label.
+2. Read train and test dataset then filter by mean and std index. After, map activity number to label.
 ```{r}
   # read data set and filter by index
   train.x <- read.table(file.path(dir_name, "train", "X_train.txt"), col.names = feature_list[, "feature"])[, mean_std_idx]
@@ -48,7 +48,7 @@ output: html_document
   test.s <- read.table(file.path(dir_name, "test", "subject_test.txt"), col.names = "subject")
   # head(test.s)
 ``` 
-3.Merge data then melt and dcast by group and calculate mean. After, write to the file.
+3. Merge data then melt and dcast by group and calculate mean. After, write to the file.
 ```{r}
   merge_data <- cbind(rbind(train.x, test.x), rbind(train.y, test.y), rbind(train.s, test.s))
   # str(merge_data)
@@ -58,3 +58,4 @@ output: html_document
   str(tidy_data)
   write.table(tidy_data, file = "tidy_data.txt", col.names = FALSE, quote = FALSE)
 ```
+

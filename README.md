@@ -10,4 +10,4 @@
 1. Download the data from [here](http://archive.ics.uci.edu/ml/machine-learning-databases/00240/)
 2. Unzip data then put `UCI HAR Dataset` folder, `run_analysis.R` R script and set work directory to the same location.
 3. Run the `run_analysis.R` R script.
-4. The tidy data's filename is `tidy_data.txt`.(default not ouput the col name, you can change it by set `col.names = TRUE` in the last line)
+4. The tidy data's filename is `tidy_data.txt`.(default ouput col names, you can change it by set `col.names = FALSE` in the last line)

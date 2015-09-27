@@ -30,4 +30,4 @@
   melt_data <- melt(merge_data, id.vars = c(c("activity", "subject")))
   tidy_data <- dcast(melt_data, activity + subject ~ variable, mean)
   str(tidy_data)
-  write.table(tidy_data, file = "tidy_data.txt", col.names = FALSE, quote = FALSE)
+  write.table(tidy_data, file = "tidy_data.txt", col.names = TRUE, quote = FALSE)

@@ -56,6 +56,6 @@ output: html_document
   tidy_data <- dcast(melt_data, activity + subject ~ variable, mean)
   # head(tidy_data)
   str(tidy_data)
-  write.table(tidy_data, file = "tidy_data.txt", col.names = FALSE, quote = FALSE)
+  write.table(tidy_data, file = "tidy_data.txt", col.names = TRUE, quote = FALSE)
 ```
 
